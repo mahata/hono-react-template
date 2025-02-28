@@ -1,0 +1,35 @@
+name: CI - backend
+
+on:
+  push:
+    paths:
+      - 'backend/**'
+  pull_request:
+    paths:
+      - 'backend/**'
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache-dependency-path: backend/package-lock.json
+          node-version: "22"
+          cache: pnpm
+
+      - name: Install Backend Dependencies
+        run: |
+          pnpm install --frozen-lockfile
+
+      - name: Test Backend
+        run: |
+          pnpm test
