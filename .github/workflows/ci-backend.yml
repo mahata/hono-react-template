@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache-dependency-path: backend/package-lock.json
+          cache-dependency-path: backend/pnpm-lock.json
           node-version: "22"
           cache: pnpm
 
