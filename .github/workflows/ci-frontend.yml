@@ -41,6 +41,10 @@ jobs:
         run: |
           pnpm build
 
+      - name: Prep for Vitest Browser Mode
+        run: |
+          pnpm exec playwright install
+
       - name: Test Frontend
         run: |
           pnpm test
