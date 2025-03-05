@@ -12,9 +12,6 @@ on:
 jobs:
   frontend:
     runs-on: ubuntu-22.04
-    defaults:
-      run:
-        working-directory: frontend
 
     steps:
       - name: Check out repository code
@@ -35,16 +32,13 @@ jobs:
 
       - name: Install Frontend Dependencies
         run: |
-          pnpm install --frozen-lockfile
-
-      - name: Build Frontend
-        run: |
-          pnpm build
+          cd frontend && pnpm install --frozen-lockfile
 
       - name: Prep for Vitest Browser Mode
         run: |
           pnpm exec playwright install
 
+
       - name: Test Frontend
         run: |
-          pnpm test
+          make test_fe
