@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "backend",
+  "name": "change-my-name-here",
   "main": "src/index.ts",
   "compatibility_date": "2025-02-28",
   "assets": {
