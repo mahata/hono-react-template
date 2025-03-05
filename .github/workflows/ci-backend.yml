@@ -12,9 +12,6 @@ on:
 jobs:
   backend:
     runs-on: ubuntu-22.04
-    defaults:
-      run:
-        working-directory: backend
 
     steps:
       - name: Check out repository code
@@ -35,8 +32,8 @@ jobs:
 
       - name: Install Backend Dependencies
         run: |
-          pnpm install --frozen-lockfile
+          cd backend && pnpm install --frozen-lockfile
 
       - name: Test Backend
         run: |
-          pnpm test
+          make test_be
