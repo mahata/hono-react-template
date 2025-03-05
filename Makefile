@@ -1,3 +1,7 @@
+build_fe:
+	@echo "Building frontend"
+	cd frontend && pnpm install && pnpm run build
+
 test_fe:
 	@echo "Running frontend tests"
 	cd frontend && pnpm run lint && pnpm test && pnpm run build
