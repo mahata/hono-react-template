@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors';
+import books from './routes/books';
 
 const app = new Hono()
 
@@ -11,11 +12,6 @@ app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
 
-app.get('/api/v1/books', (c) => {
-  return c.json([
-    { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
-    { id: 2, title: 'The Catcher in the Rye', author: 'J.D. Salinger' },
-  ])
-})
+app.route('/api/v1/books', books);
 
 export default app
