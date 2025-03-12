@@ -39,3 +39,9 @@ $ wrangler login
 $ cd backend/
 $ wrangler deploy
 ```
+
+## Settings for Dependabot
+
+This repository contains a GitHub Actions workflow to automatically merge PRs using Dependabot. For this to work, "Allow auto-merge" must be enabled in the GitHub repository settings.
+
+Also, "Allow GitHub Actions to create and approve pull requests" must be checked on GitHub. It's configurable through: `Settings > Actions > General`.
