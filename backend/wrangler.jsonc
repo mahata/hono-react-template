@@ -6,7 +6,17 @@
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS"
-  }
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  // "r2_buckets": [
+  //   {
+  //     "binding": "REACT_BUCKET",
+  //     "bucket_name": "change-my-name-here"
+  //   }
+  // ],
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
@@ -19,12 +29,6 @@
   //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   //   }
   // ],
-  // "r2_buckets": [
-  //   {
-  //     "binding": "MY_BUCKET",
-  //     "bucket_name": "my-bucket"
-  //   }
-  // ],
   // "d1_databases": [
   //   {
   //     "binding": "MY_DB",
@@ -35,8 +39,4 @@
   // "ai": {
   //   "binding": "AI"
   // },
-  // "observability": {
-  //   "enabled": true,
-  //   "head_sampling_rate": 1
-  // }
 }
