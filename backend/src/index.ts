@@ -14,7 +14,7 @@ app.get('*', async (c) => {
   const requestUrl = new URL(c.req.raw.url);
   const object = await c.env.ASSETS.fetch(new URL('/index.html', requestUrl.origin))
 
-  if (!object) {
+  if (!object.ok) {
     return c.text('404 Not Found', 404)
   }
 
