@@ -19,8 +19,8 @@ importers:
         version: 7.5.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
       '@eslint/js':
-        specifier: ^9.25.0
-        version: 9.25.0
+        specifier: ^9.25.1
+        version: 9.25.1
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
