@@ -21,7 +21,7 @@
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
     "@vitejs/plugin-react": "^4.5.1",
-    "@vitejs/plugin-react-swc": "^3.10.0",
+    "@vitejs/plugin-react-swc": "^3.10.1",
     "@vitest/browser": "^3.0.7",
     "eslint": "^9.28.0",
     "eslint-plugin-react-hooks": "^5.2.0",
