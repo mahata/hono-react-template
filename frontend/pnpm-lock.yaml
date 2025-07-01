@@ -38,7 +38,7 @@ importers:
         version: 3.10.2(vite@6.3.5)
       '@vitest/browser':
         specifier: ^3.0.7
-        version: 3.1.4(msw@2.7.3(typescript@5.8.3))(playwright@1.53.1)(vite@6.3.5)(vitest@3.1.4)
+        version: 3.1.4(msw@2.7.3(typescript@5.8.3))(playwright@1.53.2)(vite@6.3.5)(vitest@3.1.4)
       eslint:
         specifier: ^9.30.0
         version: 9.30.0
@@ -52,8 +52,8 @@ importers:
         specifier: ^16.2.0
         version: 16.2.0
       playwright:
-        specifier: ^1.53.1
-        version: 1.53.1
+        specifier: ^1.53.2
+        version: 1.53.2
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -357,10 +357,6 @@ packages:
 
   '@eslint/eslintrc@3.3.1':
     resolution: {integrity: sha512-gtF186CXhIl1p4pJNGZw8Yc6RlshoePRvE0X91oPGb3vZ8pM3qOS9W9NGPat9LziaBV7XrJWGylNQXkGcnM3IQ==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@eslint/js@9.29.0':
-    resolution: {integrity: sha512-3PIF4cBw/y+1u2EazflInpV+lYsSG0aByVIQzAgb1m1MhHFSbqTyNqtBKHgWf/9Ykud+DhILS9EGkmekVhbKoQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.30.0':
@@ -1353,13 +1349,13 @@ packages:
     resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
     engines: {node: '>=12'}
 
-  playwright-core@1.53.1:
-    resolution: {integrity: sha512-Z46Oq7tLAyT0lGoFx4DOuB1IA9D1TPj0QkYxpPVUnGDqHHvDpCftu1J2hM2PiWsNMoZh8+LQaarAWcDfPBc6zg==}
+  playwright-core@1.53.2:
+    resolution: {integrity: sha512-ox/OytMy+2w1jcYEYlOo1Hhp8hZkLCximMTUTMBXjGUA1KoFfiSZ+DU+3a739jsPY0yoKH2TFy9S2fsJas8yAw==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.53.1:
-    resolution: {integrity: sha512-LJ13YLr/ocweuwxyGf1XNFWIU4M2zUSo149Qbp+A4cpwDjsxRPj7k6H25LBrEHiEwxvRbD8HdwvQmRMSvquhYw==}
+  playwright@1.53.2:
+    resolution: {integrity: sha512-6K/qQxVFuVQhRQhFsVZ9fGeatxirtrpPgxzBYWyZLEXJzqYwuL4fuNmfOfD5et1tJE4GScKyPNeLhZeRwuTU3A==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2006,8 +2002,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/js@9.29.0': {}
-
   '@eslint/js@9.30.0': {}
 
   '@eslint/object-schema@2.1.6': {}
@@ -2406,7 +2400,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/browser@3.1.4(msw@2.7.3(typescript@5.8.3))(playwright@1.53.1)(vite@6.3.5)(vitest@3.1.4)':
+  '@vitest/browser@3.1.4(msw@2.7.3(typescript@5.8.3))(playwright@1.53.2)(vite@6.3.5)(vitest@3.1.4)':
     dependencies:
       '@testing-library/dom': 10.4.0
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
@@ -2418,7 +2412,7 @@ snapshots:
       vitest: 3.1.4(@vitest/browser@3.1.4)(msw@2.7.3(typescript@5.8.3))
       ws: 8.18.1
     optionalDependencies:
-      playwright: 1.53.1
+      playwright: 1.53.2
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -2969,11 +2963,11 @@ snapshots:
 
   picomatch@4.0.2: {}
 
-  playwright-core@1.53.1: {}
+  playwright-core@1.53.2: {}
 
-  playwright@1.53.1:
+  playwright@1.53.2:
     dependencies:
-      playwright-core: 1.53.1
+      playwright-core: 1.53.2
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -3241,7 +3235,7 @@ snapshots:
 
   vitest-browser-react@1.0.0(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(@vitest/browser@3.1.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(vitest@3.1.4):
     dependencies:
-      '@vitest/browser': 3.1.4(msw@2.7.3(typescript@5.8.3))(playwright@1.53.1)(vite@6.3.5)(vitest@3.1.4)
+      '@vitest/browser': 3.1.4(msw@2.7.3(typescript@5.8.3))(playwright@1.53.2)(vite@6.3.5)(vitest@3.1.4)
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       vitest: 3.1.4(@vitest/browser@3.1.4)(msw@2.7.3(typescript@5.8.3))
@@ -3273,7 +3267,7 @@ snapshots:
       vite-node: 3.1.4
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@vitest/browser': 3.1.4(msw@2.7.3(typescript@5.8.3))(playwright@1.53.1)(vite@6.3.5)(vitest@3.1.4)
+      '@vitest/browser': 3.1.4(msw@2.7.3(typescript@5.8.3))(playwright@1.53.2)(vite@6.3.5)(vitest@3.1.4)
     transitivePeerDependencies:
       - jiti
       - less
