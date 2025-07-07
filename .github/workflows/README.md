@@ -15,7 +15,7 @@ The `ci.yml` workflow provides unified continuous integration for both frontend 
 
 ### Workflow Structure
 
-1. **Changes Detection Job**: Uses `dorny/paths-filter` to detect which parts of the codebase changed
+1. **Changes Detection Job**: Uses git commands to detect which parts of the codebase changed
 2. **Frontend Job**: Runs conditionally when frontend changes are detected
    - Installs dependencies with pnpm
    - Sets up Playwright for browser testing
