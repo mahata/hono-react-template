@@ -41,10 +41,15 @@ jobs:
         run: |
           cd frontend && pnpm install --frozen-lockfile
 
+      - name: Setup Make (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          choco install make
+
       - name: Prep for Vitest Browser Mode
         run: |
           cd frontend && pnpm exec playwright install
 
       - name: Test Frontend
         run: |
-          cd frontend && pnpm run lint && pnpm test && pnpm run build
+          make test_fe
