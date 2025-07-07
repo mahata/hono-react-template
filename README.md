@@ -1,4 +1,4 @@
-[![CI - frontend](https://github.com/mahata/hono-react-template/actions/workflows/ci-frontend.yml/badge.svg)](https://github.com/mahata/hono-react-template/actions/workflows/ci-frontend.yml) [![CI - backend](https://github.com/mahata/hono-react-template/actions/workflows/ci-backend.yml/badge.svg)](https://github.com/mahata/hono-react-template/actions/workflows/ci-backend.yml)
+[![CI](https://github.com/mahata/hono-react-template/actions/workflows/ci.yml/badge.svg)](https://github.com/mahata/hono-react-template/actions/workflows/ci.yml)
 
 # What's this repository?
 

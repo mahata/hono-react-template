@@ -1,0 +1,146 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - 'frontend/**'
+      - 'backend/**'
+  pull_request:
+    paths:
+      - 'frontend/**'
+      - 'backend/**'
+  workflow_dispatch:
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      frontend: ${{ steps.detect.outputs.frontend }}
+      backend: ${{ steps.detect.outputs.backend }}
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Detect changes
+        id: detect
+        run: |
+          # For push events, compare with the previous commit
+          # For pull requests, compare with the base branch
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          else
+            # For push events, compare with the previous commit
+            BASE_SHA="${{ github.event.before }}"
+            HEAD_SHA="${{ github.sha }}"
+          fi
+          
+          # Check if frontend files changed
+          if git diff --name-only "$BASE_SHA" "$HEAD_SHA" | grep -q "^frontend/"; then
+            echo "frontend=true" >> $GITHUB_OUTPUT
+          else
+            echo "frontend=false" >> $GITHUB_OUTPUT
+          fi
+          
+          # Check if backend files changed
+          if git diff --name-only "$BASE_SHA" "$HEAD_SHA" | grep -q "^backend/"; then
+            echo "backend=true" >> $GITHUB_OUTPUT
+          else
+            echo "backend=false" >> $GITHUB_OUTPUT
+          fi
+          
+          # For workflow_dispatch or when no changes detected, run both
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "frontend=true" >> $GITHUB_OUTPUT
+            echo "backend=true" >> $GITHUB_OUTPUT
+          fi
+
+  frontend:
+    needs: changes
+    if: needs.changes.outputs.frontend == 'true'
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-24.04, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash --noprofile --norc -eo pipefail {0}
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10.5.2
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache-dependency-path: frontend/pnpm-lock.yaml
+          node-version: "22"
+          cache: pnpm
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend && pnpm install --frozen-lockfile
+
+      - name: Setup Make (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          choco install make
+
+      - name: Prep for Vitest Browser Mode
+        run: |
+          cd frontend && pnpm exec playwright install
+
+      - name: Test Frontend
+        run: |
+          make test_fe
+
+  backend:
+    needs: changes
+    if: needs.changes.outputs.backend == 'true'
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-24.04, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash --noprofile --norc -eo pipefail {0}
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10.5.2
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache-dependency-path: backend/pnpm-lock.yaml
+          node-version: "22"
+          cache: pnpm
+
+      - name: Setup Make (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          choco install make
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend && pnpm install --frozen-lockfile
+
+      - name: Test Backend
+        run: |
+          make test_be
