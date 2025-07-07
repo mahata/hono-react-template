@@ -11,7 +11,10 @@ on:
 
 jobs:
   frontend:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-24.04, windows-latest]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     defaults:
       run:
@@ -44,4 +47,4 @@ jobs:
 
       - name: Test Frontend
         run: |
-          make test_fe
+          cd frontend && pnpm run lint && pnpm test && pnpm run build
