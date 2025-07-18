@@ -20,7 +20,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.6.0",
+    "@vitejs/plugin-react": "^4.7.0",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "@vitest/browser": "^3.0.7",
     "eslint": "^9.31.0",
