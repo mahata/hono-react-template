@@ -15,8 +15,8 @@ importers:
         specifier: ^19.1.1
         version: 19.1.1(react@19.1.1)
       react-router:
-        specifier: ^7.8.0
-        version: 7.8.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: ^7.8.1
+        version: 7.8.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
     devDependencies:
       '@eslint/js':
         specifier: ^9.33.0
@@ -391,8 +391,8 @@ packages:
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
 
-  '@inquirer/confirm@5.1.14':
-    resolution: {integrity: sha512-5yR4IBfe0kXe59r1YCTG8WXkUbl7Z35HK87Sw+WUyGD8wNUx7JvY7laahzeytyE1oLn74bQnL7hstctQxisQ8Q==}
+  '@inquirer/confirm@5.1.15':
+    resolution: {integrity: sha512-SwHMGa8Z47LawQN0rog0sT+6JpiL0B7eW9p1Bb7iCeKDGTI5Ez25TSc2l8kw52VV7hA4sX/C78CGkMrKXfuspA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@types/node': '>=18'
@@ -1385,8 +1385,8 @@ packages:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
     engines: {node: '>=0.10.0'}
 
-  react-router@7.8.0:
-    resolution: {integrity: sha512-r15M3+LHKgM4SOapNmsH3smAizWds1vJ0Z9C4mWaKnT9/wD7+d/0jYcj6LmOvonkrO4Rgdyp4KQ/29gWN2i1eg==}
+  react-router@7.8.1:
+    resolution: {integrity: sha512-5cy/M8DHcG51/KUIka1nfZ2QeylS4PJRs6TT8I4PF5axVsI5JUxp0hC0NZ/AEEj8Vw7xsEoD7L/6FY+zoYaOGA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -2011,7 +2011,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@inquirer/confirm@5.1.14':
+  '@inquirer/confirm@5.1.15':
     dependencies:
       '@inquirer/core': 10.1.15
       '@inquirer/type': 3.0.8
@@ -2869,7 +2869,7 @@ snapshots:
       '@bundled-es-modules/cookie': 2.0.1
       '@bundled-es-modules/statuses': 1.0.1
       '@bundled-es-modules/tough-cookie': 0.1.6
-      '@inquirer/confirm': 5.1.14
+      '@inquirer/confirm': 5.1.15
       '@mswjs/interceptors': 0.37.6
       '@open-draft/deferred-promise': 2.2.0
       '@open-draft/until': 2.1.0
@@ -2983,7 +2983,7 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
-  react-router@7.8.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  react-router@7.8.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       cookie: 1.0.2
       react: 19.1.1
