@@ -74,7 +74,7 @@ jobs:
           run_install: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           cache-dependency-path: frontend/pnpm-lock.yaml
           node-version: "22"
@@ -120,7 +120,7 @@ jobs:
           run_install: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           cache-dependency-path: backend/pnpm-lock.yaml
           node-version: "22"
